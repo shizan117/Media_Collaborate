@@ -69,14 +69,9 @@ To pull changes from the remote repository, follow these steps:
     ```bash
     git push origin main
     ```
-###Additional Commands
-####To update Composer dependencies, run:
-composer update
 
 
-##Seed the Database with Initial Data
-###To seed the database, use:
-php artisan db:seed
+
 
 
 **Note:** Use `--rebase` with `git pull` if you need to reapply local commits on top of the remote changes:
@@ -84,8 +79,3 @@ php artisan db:seed
 git pull --rebase origin main
 
 
-
-
-## Seeder
-
-### php artisan db:seed
