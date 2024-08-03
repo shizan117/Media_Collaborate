@@ -69,8 +69,8 @@ To pull changes from the remote repository, follow these steps:
     ```bash
     git push origin main
     ```
-##Additional Commands
-###To update Composer dependencies, run:
+###Additional Commands
+####To update Composer dependencies, run:
 composer update
 
 
