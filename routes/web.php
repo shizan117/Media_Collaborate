@@ -10,13 +10,24 @@ use App\Http\Middleware\PublicAuth;
 use App\Http\Middleware\CheckAdminPanel;
 use App\Http\Middleware\CheckVideoEditorRole;
 use App\Http\Middleware\CheckVideoManRole;
+use App\Http\Controllers\HomeController;
 
+
+Route::get('/', [HomeController::class, 'landingPage'])->name('landingPage');
+Route::get('/public-user-login', [HomeController::class, 'signIn'])->name('public.user.signIn');
+Route::get('/public-sign-up', [HomeController::class, 'SignUP'])->name('public.SignUP');
+
+
+
+
+Route::get('/public/auth-sign-out', [AuthController::class, 'PublicLogOut'])->name('public.auth.sign.out');
 
 // Public routes for guest users
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('auth.loginForm');
     Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
-
+    Route::post('/public-login', [AuthController::class, 'PublicLogin'])->name('public.auth.login');
+    Route::post('/public-store-sign-up', [AuthController::class, 'register'])->name('public.storeSignUp');
 });
 Route::get('/auth-sign-out', [AuthController::class, 'logout'])->name('auth.sign.out');
 

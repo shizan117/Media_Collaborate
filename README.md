@@ -71,15 +71,7 @@ To pull changes from the remote repository, follow these steps:
     ```
 
 
-
-
 **Note:** Use `--rebase` with `git pull` if you need to reapply local commits on top of the remote changes:
 ```bash
 git pull --rebase origin main
-
-
-
-
-## Seeder
-
-### php artisan db:seed
+"# video_hinda" 

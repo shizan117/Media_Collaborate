@@ -52,9 +52,20 @@
                 <i class="fas fa-th-large"></i>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="{{route('auth.sign.out')}}">Sign out</a>
-        </li>
+
+        @if(Auth::check())
+            @if(Auth::user()->role === 'public')
+                <li class="nav-item">
+                    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="{{route('public.auth.sign.out')}}">Sign out</a>
+                </li>
+
+            @else
+                <li class="nav-item">
+                    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="{{route('auth.sign.out')}}">Sign out</a>
+                </li>
+
+            @endif
+        @endif
     </ul>
 </nav>
 <!-- /.navbar -->
